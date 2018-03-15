@@ -22,9 +22,9 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
-    url(r'^$', views.home),
+    url(r'^$', views.home, name='home'),
 
-    url(r'^(?P<my_args>\d+)/$', views.detail, name = 'detail'),
+    url(r'^(?P<id>\d+)/$', views.detail, name = 'detail'),
 
 #    url(r'^test/$', views.test),
 ]
