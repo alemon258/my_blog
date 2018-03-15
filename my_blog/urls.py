@@ -16,6 +16,8 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from article import views
+from my_blog import settings
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -23,4 +25,7 @@ urlpatterns = [
     url(r'^$', views.home),
 
     url(r'^(?P<my_args>\d+)/$', views.detail, name = 'detail'),
+
+#    url(r'^test/$', views.test),
 ]
+urlpatterns += staticfiles_urlpatterns()
