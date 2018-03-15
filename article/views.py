@@ -17,9 +17,9 @@ from django.http import Http404
 
 def detail(request, id):
     try:
-    	post = Article.objects.get(id=str(id))
+        post = Article.objects.get(id=str(id))
     except Article.DoesNotExits:
-    	raise Http404
+        raise Http404
     return render(request, 'post.html', {'post' : post})
 
 #def test(request):
@@ -28,3 +28,11 @@ def detail(request, id):
 def home(request):
     post_list = Article.objects.all()
     return render(request, 'home.html', {'post_list': post_list})
+
+
+def archives(request):
+	try:
+		post_list = Article.objects.all()
+	except Article.DoesNotExits:
+		raise Http404
+	return render(request, 'archives.html', {'post_list' : post_list, 'error' : False})

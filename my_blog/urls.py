@@ -26,6 +26,7 @@ urlpatterns = [
 
     url(r'^(?P<id>\d+)/$', views.detail, name = 'detail'),
 
+    url(r'^archives/$', views.archives, name = 'archives'),
 #    url(r'^test/$', views.test),
 ]
 urlpatterns += staticfiles_urlpatterns()
