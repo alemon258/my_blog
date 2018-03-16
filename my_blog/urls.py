@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from article import views
+
 from my_blog import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
@@ -27,6 +28,14 @@ urlpatterns = [
     url(r'^(?P<id>\d+)/$', views.detail, name = 'detail'),
 
     url(r'^archives/$', views.archives, name = 'archives'),
+
+    # url(r'^aboutme/$', views.about_me, name = 'about_me'),
+
+    # url(r'^tag(?P<tag>\w+)/$', views.search_tag, name = 'search_tag'),
+
+    url(r'^search/$', views.blog_search, name = 'search'),
+
+#    url(r'^feed/$', views.RSSFeed, name = "RSS"),
 #    url(r'^test/$', views.test),
 ]
 urlpatterns += staticfiles_urlpatterns()
